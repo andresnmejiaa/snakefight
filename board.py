@@ -33,14 +33,14 @@ class Board:
     def getRandomLocation(self):
         CELLWIDTH= self.cellwidth()
         CELLHEIGHT=self.cellheight()
-        return {'x':random.randint(0,CELLWIDTH-2),'y': random.randint(0,CELLHEIGHT-2)}
+        return {'x':random.randint(1,CELLWIDTH-2),'y': random.randint(1,CELLHEIGHT-2)}
     def createFood(self,number):
         for x in range(number):
             (self.food).append(self.getRandomLocation())
 
     def replaceFood(self,index):
         if self.food==[]:
-            self.createFood(3)
+            self.createFood(5)
         else:
             del self.food[index]
             newfood = self.getRandomLocation()
